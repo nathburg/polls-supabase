@@ -69,4 +69,10 @@ option {
     text-align: center;
 }
 
+.end-poll {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
 
