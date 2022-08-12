@@ -1,6 +1,6 @@
-import { renderPoll } from "./render-utils.js";
-import { sendPoll } from "./fetch-utils.js";
-import { getPolls } from "./fetch-utils.js";
+import { renderPoll } from './render-utils.js';
+import { sendPoll } from './fetch-utils.js';
+import { getPolls } from './fetch-utils.js';
 
 const pollFormEl = document.querySelector('#poll-form');
 const currentPollEl = document.querySelector('#current-poll');
@@ -80,7 +80,6 @@ function displayCurrentPoll() {
 async function displayOldPolls() {
     oldPollsEl.textContent = '';
     const polls = await getPolls();
-    console.log(polls);
     for (let poll of polls) {
         const thisPoll = renderPoll(poll);
         oldPollsEl.append(thisPoll);
