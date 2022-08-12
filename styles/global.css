@@ -22,6 +22,13 @@ header {
 
 main {
     padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
 
 footer {
@@ -33,3 +40,39 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+
+.current-poll-container {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+.vote-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.poll {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+option {
+    text-align: center;
+}
+
+.question {
+    text-align: center;
+}
+
+.end-poll {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+

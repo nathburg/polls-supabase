@@ -12,16 +12,60 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/global.css" />
-    <title>Web App</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <title>Poll Tracker (database)</title>
 </head>
 
 <body>
     <header>
         <img src="/assets/html_css_js.png">
-        <h1>Web App</h1>
+        <h1>Poll Tracker</h1>
     </header>
 
-    <main>
+    <main class="main">
+        <section class="left">
+
+            <section id="form">
+                <h2>Make a poll!</h2>
+                <form id="poll-form">
+                    <label>Question:</label>
+                    <input name="question-input"><br>
+                    <label>Option 1:</label>
+                    <input name="option-one-input"><br>
+                    <label>Option 2:</label>
+                    <input name="option-two-input"><br>
+                    <button>Submit</button>
+                </form>
+            </section>
+
+            <section class="current-poll-container">
+                
+                <section id="current-poll">
+                    <h2>Current Poll</h2>
+                    current poll goes here
+                </section>
+                <section id="buttons">
+                    <section class="vote-buttons">
+                        <div class="option-one-buttons">
+                            <button id="option-one-add">Add Vote</button>
+                            <button id="option-one-subtract">Subtract Vote</button>
+                        </div>
+                        <div class="option-two-buttons">
+                            <button id="option-two-add">Add Vote</button>
+                            <button id="option-two-subtract">Subtract Vote</button>
+                        </div>
+                    </section>
+                    <section class="end-poll">
+                    <button id="end-poll-button">End Poll</button>
+                    </section>
+                </section>
+            </section>    
+
+        </section>
+        <section class="right">
+            <h2>Old Polls</h2>
+            <div id="old-polls"></div>
+        </section>
 
     </main>
 
