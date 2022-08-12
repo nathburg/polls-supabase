@@ -9,6 +9,7 @@ const optionOneAddButtonEl = document.querySelector('#option-one-add');
 const optionOneSubtractButtonEl = document.querySelector('#option-one-subtract');
 const optionTwoAddButtonEl = document.querySelector('#option-two-add');
 const optionTwoSubtractButtonEl = document.querySelector('#option-two-subtract');
+const oldPollsEl = document.querySelector('#old-polls');
 
 
 let currentPoll = {
@@ -18,6 +19,8 @@ let currentPoll = {
     optionOneVotes: 0,
     optionTwoVotes: 0
 };
+
+displayOldPolls();
 
 pollFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -61,6 +64,7 @@ endPollEl.addEventListener('click', async () => {
     currentPoll.optionOneVotes = 0;
     currentPoll.optionTwoVotes = 0;
     displayCurrentPoll();
+    displayOldPolls();
 
 
 });
@@ -71,5 +75,15 @@ function displayCurrentPoll() {
     titleEl.textContent = 'Current Poll';
     const newPoll = renderPoll(currentPoll);
     currentPollEl.append(titleEl, newPoll);
+}
+
+async function displayOldPolls() {
+    oldPollsEl.textContent = '';
+    const polls = await getPolls();
+    console.log(polls);
+    for (let poll of polls) {
+        const thisPoll = renderPoll(poll);
+        oldPollsEl.append(thisPoll);
+    }
 }
 

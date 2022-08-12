@@ -7,5 +7,7 @@ export async function sendPoll(poll) {
 }
 
 export async function getPolls() {
-    await client.from('polls').select('*');
+    const polls = await client.from('polls').select('*');
+
+    return polls.data;
 }
