@@ -4,4 +4,8 @@ const client = supabase.createClient(supabaseUrl, supabaseKey);
 
 export async function sendPoll(poll) {
     await client.from('polls').insert([poll]);
-} 
+}
+
+export async function getPolls() {
+    await client.from('polls').select('*');
+}
